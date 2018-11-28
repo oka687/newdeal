@@ -19,30 +19,30 @@ public class App {
     Scanner keyIn = new Scanner(System.in);
 
     for (int i = 0; i < DEFAULT_SIZE; i++) {
-      System.out.print("ë²ˆí˜¸? ");
+      System.out.print("¹øÈ£? ");
       no[i] = Integer.parseInt(keyIn.nextLine());
 
-      System.out.print("ìˆ˜ì—…ëª…? ");
+      System.out.print("¼ö¾÷¸í? ");
       title[i] = keyIn.nextLine();
 
-      System.out.print("ë‚´ìš©? ");
+      System.out.print("³»¿ë? ");
       contents[i] = keyIn.nextLine();
 
-      System.out.print("ê°•ì˜ì‹œìž‘ì¼? ");
+      System.out.print("°­ÀÇ½ÃÀÛÀÏ? ");
       startDate[i] = Date.valueOf(keyIn.nextLine());
 
-      System.out.print("ê°•ì˜ì¢…ë£Œì¼? ");
+      System.out.print("°­ÀÇÁ¾·áÀÏ? ");
       endDate[i] = Date.valueOf(keyIn.nextLine());
 
-      System.out.print("ì´ê°•ì˜ì‹œê°„? ");
+      System.out.print("ÃÑ°­ÀÇ½Ã°£? ");
       totalHours[i] = Integer.parseInt(keyIn.nextLine());
 
-      System.out.print("ì¼ê°•ì˜ì‹œê°„? ");
+      System.out.print("ÀÏ°­ÀÇ½Ã°£? ");
       dayHours[i] = Integer.parseInt(keyIn.nextLine());
 
       len++;
 
-      System.out.print("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/n) ");
+      System.out.print("°è¼ÓÇÏ½Ã°Ú½À´Ï±î?(Y/n) ");
       String input = keyIn.nextLine();
       if (input.equals("") || input.equalsIgnoreCase("y")) {
         continue;
@@ -58,8 +58,4 @@ public class App {
 
   }
 }
-
-
-
-
 
