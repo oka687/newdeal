@@ -1,3 +1,5 @@
+
+
 import java.sql.Date;
 import java.util.Scanner;
 
@@ -9,44 +11,40 @@ public class App {
 
     final int LENGTH = 10;
     
-    int[] no = new int[LENGTH];
-    String[] title = new String[LENGTH];
-    String[] contents = new String[LENGTH];
-    Date[] startDate = new Date[LENGTH];
-    Date[] endDate = new Date[LENGTH];
-    int[] totalHours = new int[LENGTH];
-    int[] dayHours = new int[LENGTH];
+    Lesson[] lessons = new Lesson[LENGTH];
     
     int i = 0;
     while (i < LENGTH) {
-      System.out.print("ë²ˆí˜¸? ");
-      no[i] = Integer.parseInt(keyboard.nextLine());
+    lessons[i] = new Lesson();
+    	
+      System.out.print("¹øÈ£? ");
+      lessons[i].no = Integer.parseInt(keyboard.nextLine());
       
-      System.out.print("ìˆ˜ì—…ëª…? ");
-      title[i] = keyboard.nextLine();
+      System.out.print("¼ö¾÷¸í? ");
+      lessons[i].title = keyboard.nextLine();
       
-      System.out.print("ì„¤ëª…? ");
-      contents[i] = keyboard.nextLine();
+      System.out.print("¼³¸í? ");
+      lessons[i].contents = keyboard.nextLine();
       
-      System.out.print("ì‹œì‘ì¼? ");
-      startDate[i] = Date.valueOf(keyboard.nextLine());
+      System.out.print("½ÃÀÛÀÏ? ");
+      lessons[i].startDate = Date.valueOf(keyboard.nextLine());
       
-      System.out.print("ì¢…ë£Œì¼? ");
-      endDate[i] = Date.valueOf(keyboard.nextLine());
+      System.out.print("Á¾·áÀÏ? ");
+      lessons[i].endDate = Date.valueOf(keyboard.nextLine());
       
-      System.out.print("ì´ìˆ˜ì—…ì‹œê°„? ");
-      totalHours[i] = Integer.parseInt(keyboard.nextLine());
+      System.out.print("ÃÑ¼ö¾÷½Ã°£? ");
+      lessons[i].totalHours = Integer.parseInt(keyboard.nextLine());
       
-      System.out.print("ì¼ìˆ˜ì—…ì‹œê°„? ");
-      dayHours[i] = Integer.parseInt(keyboard.nextLine());
+      System.out.print("ÀÏ¼ö¾÷½Ã°£? ");
+      lessons[i].dayHours = Integer.parseInt(keyboard.nextLine());
       
-      i++; // ë°°ì—´ì˜ ì¸ë±ìŠ¤ë¥¼ ì¦ê°€ì‹œí‚¨ë‹¤.
+      i++; // ¹è¿­ÀÇ ÀÎµ¦½º¸¦ Áõ°¡½ÃÅ²´Ù.
       
-      // ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ì„ ì†Œë¬¸ìë¡œ ë³€í™˜í•œë‹¤.
-      System.out.print("\nê³„ì† ì…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/n) ");
+      // »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªÀ» ¼Ò¹®ÀÚ·Î º¯È¯ÇÑ´Ù.
+      System.out.print("\n°è¼Ó ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î?(Y/n) ");
       String answer = keyboard.nextLine().toLowerCase();
       
-      // ì…ë ¥ ê°’ì´ "Y", "y", "" ì´ ì•„ë‹ˆë©´, ì…ë ¥ì„ ì¢…ë£Œí•œë‹¤. 
+      // ÀÔ·Â °ªÀÌ "Y", "y", "" ÀÌ ¾Æ´Ï¸é, ÀÔ·ÂÀ» Á¾·áÇÑ´Ù. 
       if (!answer.equals("y") && answer.length() > 0) {
         break;
       }
@@ -56,12 +54,13 @@ public class App {
     
     keyboard.close();
     
-    System.out.println(); // ë¹ˆ ì¤„ ì¶œë ¥
+    System.out.println(); // ºó ÁÙ Ãâ·Â
     
-    // ë°°ì—´ì— ì…ë ¥í•œ ê°œìˆ˜ë§Œí¼ ì¶œë ¥í•œë‹¤.
+    // ¹è¿­¿¡ ÀÔ·ÂÇÑ °³¼ö¸¸Å­ Ãâ·ÂÇÑ´Ù.
+   
     for (int j = 0; j < i; j++) {
       System.out.printf("%3d, %-15s, %10s ~ %10s, %4d\n", 
-          no[j], title[j], startDate[j], endDate[j], totalHours[j]);
+          lessons[j].no , lessons[j].title , lessons[j].startDate , lessons[j].endDate , lessons[j].totalHours );
     }
   }
 }
